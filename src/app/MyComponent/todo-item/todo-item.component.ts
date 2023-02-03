@@ -8,7 +8,7 @@ import { Todo } from "src/app/Todo";
 })
 export class TodoItemComponent implements OnInit {
   @Input() 
-  todo: Todo = new Todo;//This is to recieve the todo passed by the todos.component.html
+  todo: Todo;//This is to recieve the todo passed by the todos.component.html
   @Output()
   todoDelete: EventEmitter<Todo> = new EventEmitter();//Defining todoDelete; <Todo>type
   constructor(){}

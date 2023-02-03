@@ -5,10 +5,13 @@
         <li></li>
         <li></li>               
     </ul> -->
-<app-add-todo></app-add-todo>
+<app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
 <h4>Your Todos</h4>
-<div *ngFor="let todo of todos"> 
-    <!-- Passing a todo object to another component for display;
+<div *ngIf="this.todos.length===0; else elseBlock">No Todos To Display.</div><!-- if length=0 then prints no todo to display else the needed part in the else position. -->
+<ng-template #elseBlock>
+    <div *ngFor="let todo of todos">
+        <!-- Passing a todo object to another component for display;
     also initiating eventlistener of name deleteTodo($event) of type todoDelete(custom event) -->
-    <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)"></app-todo-item>
-</div>
+        <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)"></app-todo-item>
+    </div>
+</ng-template>

@@ -1,13 +1,13 @@
 <div class="my-3">
-    <h4>Add Todo</h4>
-        <form><!-- //this is another eventlistener that adds todos on clicking add todo -->
+    <h4>Add Todo</h4><!-- //Creating form for taking in the tasks -->
+        <form (ngSubmit) = "onSubmit()" ><!-- //this is another eventlistener desc in onSubmit() defined in .ts, that adds todos in todo array on clicking add todo -->
             <div class="form-group">
             <label for="title">Todo Title</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp">
-            </div>
+            <input type="text" [(ngModel)]="title" class="form-control" id="title" name="title" aria-describedby="emailHelp">
+            </div> <!--ngModel Creates a FormControl instance from a domain model and binds it to a form control element. -->
             <div class="form-group">
             <label for="desc">Todo Description</label>
-            <input type="password" class="form-control" id="desc">
+            <input type="desc" class="form-control" id="desc" name="desc" [(ngModel)]="desc">
             </div>
             <button type="submit" class="btn btn-sm btn-primary">Add Todo</button>
         </form>
