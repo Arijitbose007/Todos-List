@@ -1,0 +1,8 @@
+<div class="my-3">
+    <h5>{{todo.title}}</h5>  <!-- passed from the todos.component.html -->
+    <p>{{todo.desc}}</p>
+    <button class="btn btn-sm btn-danger" (click)="onclick(todo)">Delete</button>
+    <!-- (click) is handling an event which is when one clicks on the button(calls eventlistener)
+     then it refers to the onclick() function defined in the .ts file of this component.
+         (todo) is an objecgt of type Todo defined in Todo.ts  -->
+</div>

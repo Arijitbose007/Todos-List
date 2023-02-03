@@ -1,0 +1,14 @@
+<!-- *ngFor is a custom html attribute for loop then i put javaScript in it
+    It is similar to 
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>               
+    </ul> -->
+<app-add-todo></app-add-todo>
+<h4>Your Todos</h4>
+<div *ngFor="let todo of todos"> 
+    <!-- Passing a todo object to another component for display;
+    also initiating eventlistener of name deleteTodo($event) of type todoDelete(custom event) -->
+    <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)"></app-todo-item>
+</div>
