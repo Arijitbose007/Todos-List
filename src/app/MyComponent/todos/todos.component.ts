@@ -30,4 +30,11 @@ export class TodosComponent implements OnInit {
     this.todos.push(todo);//splice is used to delete a specific element(index-till we need to delete)
     localStorage.setItem("todos", JSON.stringify(this.todos));//storing the todos so that when the page loaded it remains
   }
+  toggleTodo(todo: Todo){//explaing the deleteTodo($event) in the parent component to know what is getting deleted
+    const index = this.todos.indexOf(todo);//it fetches the index to be deleted
+    this.todos[index].active = !this.todos[index].active;//splice is used to delete a specific element(index-till we need to delete)
+    localStorage.setItem("todos", JSON.stringify(this.todos));//storing the todos so that when the page loaded it remains
+    
+  }
 }
+
